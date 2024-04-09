@@ -1,3 +1,4 @@
+/* Dati esempio */
 let network = [
   { from: 0, to: 1, status: 0 },
   { from: 1, to: 2, status: 0 },
@@ -13,29 +14,25 @@ let network = [
   { from: 10, to: 12, status: 0 },
 ];
 
+/* Funzione */
 function findPath(network) {
-  // 1. Trovo le radici
+  // Trovo le "radici" dei percorsi
   let countPossibleResults = 0;
-  // Finali dei percorsi
+  // Array con finali dei percorsi
   let ends = [];
 
-  // risultati
-  let results = [];
+  // Cerco le basi dei finali dei percorsi
   for (let i = 0; i < network.length; i++) {
     if (network[i].status === 1) {
       countPossibleResults += 1;
       let to = network[i].to;
       let from = network[i].from;
       ends.push([to, from]);
-
-      //   // 2. Trovo percorsi
-      //   results.push();
     }
   }
 
-  // 2. Trovo percorsi
+  // Trovo percorsi
   for (let j = 0; j < ends.length; j++) {
-    // console.log("end ", ends[j]);
     for (let x = 0; x < ends[j].length; x++) {
       for (let y = 0; y < network.length; y++) {
         // console.log("controllo network ", network[y].to, ends[j][x + 1]);
@@ -46,7 +43,7 @@ function findPath(network) {
     }
   }
 
-  // 3. Stampo numero possibili risultati
+  // Stampo numero possibili risultati
   console.log(
     "N° possibili risultati sono: ",
     countPossibleResults,
