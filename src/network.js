@@ -45,9 +45,10 @@ function findPath(network) {
 
   // Stampo numero possibili risultati
   console.log(
-    "N° possibili risultati sono: ",
+    "Il n° dei possibili rislutati è: ",
     countPossibleResults,
-    "e i finali sono: ",
-    ends
+    "mentre i percorsi finali sono: ",
+    ends,
+    " :)"
   );
 }
